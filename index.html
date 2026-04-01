@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"/>
@@ -369,6 +369,58 @@
   .story-play-btn svg{width:16px;height:16px;fill:#fff;margin-left:3px;}
   .story-cap{position:absolute;bottom:10px;left:10px;right:10px;z-index:3;}
   .story-cap-text{font-size:11px;color:rgba(255,255,255,.9);line-height:1.4;text-shadow:0 1px 3px rgba(0,0,0,.8);}
+
+  /* ── BUNDLE UNIT SELECTORS ── */
+  .bundle-units{display:none;padding:0 14px 14px;flex-direction:column;gap:10px;}
+  .bundle-units.show{display:flex;}
+  .unit-row{background:#f7f9f8;border:1px solid var(--gray-200);border-radius:10px;padding:10px 12px;}
+  .unit-row-title{font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+  .unit-sz-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+  .unit-sz-btn{min-width:42px;padding:6px 8px;border:1.5px solid var(--gray-200);border-radius:6px;font-size:12px;font-weight:600;color:#555;background:#fff;cursor:pointer;text-align:center;transition:all .15s;}
+  .unit-sz-btn:hover{border-color:var(--green);color:var(--green);}
+  .unit-sz-btn.active{border-color:var(--green);color:var(--green);background:var(--green-light);}
+  .unit-model-row{display:flex;gap:6px;}
+  .unit-model-btn{flex:1;padding:7px 6px;border:1.5px solid var(--gray-200);border-radius:6px;font-size:11px;font-weight:500;color:#555;background:#fff;cursor:pointer;text-align:center;transition:all .15s;line-height:1.3;}
+  .unit-model-btn:hover{border-color:var(--green);}
+  .unit-model-btn.active{border-color:var(--green);color:var(--green);background:var(--green-light);}
+  .unit-model-tag{display:inline-block;font-size:9px;font-weight:700;padding:1px 5px;border-radius:6px;margin-top:2px;}
+  .umt-green{background:#d0e8dc;color:var(--green);}
+  .umt-gray{background:#f0f0f0;color:#777;}
+
+  /* ── CART DRAWER ── */
+  .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:900;opacity:0;pointer-events:none;transition:opacity .3s;}
+  .cart-overlay.open{opacity:1;pointer-events:all;}
+  .cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:#fff;z-index:901;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-4px 0 24px rgba(0,0,0,.12);}
+  .cart-drawer.open{transform:translateX(0);}
+  .cart-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--gray-200);}
+  .cart-head-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#111;letter-spacing:.5px;text-transform:uppercase;}
+  .cart-close{width:34px;height:34px;border:1px solid var(--gray-200);border-radius:50%;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#555;transition:background .15s;}
+  .cart-close:hover{background:var(--gray-100);}
+  .cart-body{flex:1;overflow-y:auto;padding:16px 20px;}
+  .cart-empty{text-align:center;padding:40px 20px;color:var(--gray-500);}
+  .cart-empty svg{width:40px;height:40px;fill:#ddd;margin:0 auto 12px;}
+  .cart-empty p{font-size:13px;}
+  .cart-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--gray-200);}
+  .cart-item:last-child{border-bottom:none;}
+  .cart-item-img{width:64px;height:64px;border-radius:8px;border:1px solid var(--gray-200);background:var(--gray-100);flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .cart-item-img img{width:100%;height:100%;object-fit:contain;padding:4px;}
+  .cart-item-info{flex:1;min-width:0;}
+  .cart-item-name{font-size:13px;font-weight:600;color:#111;margin-bottom:3px;}
+  .cart-item-variant{font-size:11px;color:var(--gray-500);margin-bottom:6px;}
+  .cart-item-price{font-size:14px;font-weight:700;color:var(--green);}
+  .cart-item-remove{font-size:10px;color:#bbb;cursor:pointer;background:none;border:none;padding:0;margin-top:4px;display:block;}
+  .cart-item-remove:hover{color:var(--red);}
+  .cart-foot{padding:16px 20px;border-top:1px solid var(--gray-200);}
+  .cart-subtotal{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+  .cart-subtotal-label{font-size:13px;color:var(--gray-500);}
+  .cart-subtotal-val{font-size:18px;font-weight:700;color:var(--green);font-family:'Barlow Condensed',sans-serif;}
+  .cart-pix-note{font-size:11px;color:var(--green);background:var(--green-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;text-align:center;}
+  .cart-checkout-btn{width:100%;background:var(--green);color:#fff;border:none;border-radius:var(--radius-md);padding:15px;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background .15s;}
+  .cart-checkout-btn:hover{background:var(--green-mid);}
+  .cart-continue{width:100%;background:transparent;color:var(--gray-500);border:none;font-size:12px;cursor:pointer;padding:10px 0 0;text-align:center;}
+  .cart-continue:hover{color:#111;}
+  .cart-badge{position:absolute;top:-6px;right:-6px;background:var(--green);color:#fff;font-size:9px;font-weight:700;width:16px;height:16px;border-radius:50%;display:none;align-items:center;justify-content:center;}
+  .cart-badge.show{display:flex;}
 </style>
 </head>
 <body>
@@ -436,21 +488,11 @@
       </div>
 
       <div>
-        <p class="opt-label">Tamanho — <strong id="sz-lbl">M</strong></p>
-        <div class="size-grid" id="sizes">
-          <button class="size-btn" data-s="P">P</button>
-          <button class="size-btn active" data-s="M">M</button>
-          <button class="size-btn" data-s="G">G</button>
-          <button class="size-btn" data-s="GG">GG</button>
-        </div>
-      </div>
-
-      <div>
         <p class="opt-label" style="margin-bottom:10px;">Quantidade — <strong>economize mais</strong></p>
         <div class="bundles" id="bundles">
 
           <!-- BUNDLE 1 UNIDADE -->
-          <div class="bundle active" data-i="0">
+          <div class="bundle active" data-i="0" data-qty="1" data-price="129.90">
             <div class="bundle-main">
               <div class="bundle-thumb">
                 <img src="CAMISASWOLRD11.webp" alt="1 camisa" />
@@ -464,21 +506,29 @@
                 <div class="bundle-was">R$ 189,90</div>
               </div>
             </div>
-            <!-- modelo para 1 unidade (sempre visível quando selecionado) -->
-            <div class="bundle-model-row show" id="bm0">
-              <button class="bundle-model-btn active" data-bm="torcedor">
-                Modelo Torcedor
-                <div><span class="bundle-model-tag bmt-green">mais vendido</span></div>
-              </button>
-              <button class="bundle-model-btn" data-bm="jogador">
-                Modelo Jogador
-                <div><span class="bundle-model-tag bmt-gray">premium</span></div>
-              </button>
+            <div class="bundle-units show" id="bu0">
+            <div class="unit-row">
+              <div class="unit-row-title">Camisa 1 — Personalizar</div>
+              <div class="unit-sz-row">
+                <button class="unit-sz-btn active" data-sz="M">M</button>
+                <button class="unit-sz-btn" data-sz="P">P</button>
+                <button class="unit-sz-btn" data-sz="G">G</button>
+                <button class="unit-sz-btn" data-sz="GG">GG</button>
+              </div>
+              <div class="unit-model-row">
+                <button class="unit-model-btn active" data-um="torcedor">
+                  Torcedor<div><span class="unit-model-tag umt-green">+ vendido</span></div>
+                </button>
+                <button class="unit-model-btn" data-um="jogador">
+                  Jogador<div><span class="unit-model-tag umt-gray">premium</span></div>
+                </button>
+              </div>
+            </div>
             </div>
           </div>
 
           <!-- BUNDLE 2 UNIDADES -->
-          <div class="bundle" data-i="1">
+          <div class="bundle" data-i="1" data-qty="2" data-price="207.84">
             <div class="bundle-tag">MELHOR OFERTA</div>
             <div class="bundle-main">
               <div class="bundle-thumb-stack">
@@ -495,20 +545,46 @@
                 <div class="bundle-was">R$ 379,80</div>
               </div>
             </div>
-            <div class="bundle-model-row" id="bm1">
-              <button class="bundle-model-btn active" data-bm="torcedor">
-                Modelo Torcedor
-                <div><span class="bundle-model-tag bmt-green">mais vendido</span></div>
-              </button>
-              <button class="bundle-model-btn" data-bm="jogador">
-                Modelo Jogador
-                <div><span class="bundle-model-tag bmt-gray">premium</span></div>
-              </button>
+            <div class="bundle-units" id="bu1">
+            <div class="unit-row">
+              <div class="unit-row-title">Camisa 1 — Camisa 1</div>
+              <div class="unit-sz-row">
+                <button class="unit-sz-btn active" data-sz="M">M</button>
+                <button class="unit-sz-btn" data-sz="P">P</button>
+                <button class="unit-sz-btn" data-sz="G">G</button>
+                <button class="unit-sz-btn" data-sz="GG">GG</button>
+              </div>
+              <div class="unit-model-row">
+                <button class="unit-model-btn active" data-um="torcedor">
+                  Torcedor<div><span class="unit-model-tag umt-green">+ vendido</span></div>
+                </button>
+                <button class="unit-model-btn" data-um="jogador">
+                  Jogador<div><span class="unit-model-tag umt-gray">premium</span></div>
+                </button>
+              </div>
+            </div>
+            <div class="unit-row">
+              <div class="unit-row-title">Camisa 2 — Camisa 2</div>
+              <div class="unit-sz-row">
+                <button class="unit-sz-btn active" data-sz="M">M</button>
+                <button class="unit-sz-btn" data-sz="P">P</button>
+                <button class="unit-sz-btn" data-sz="G">G</button>
+                <button class="unit-sz-btn" data-sz="GG">GG</button>
+              </div>
+              <div class="unit-model-row">
+                <button class="unit-model-btn active" data-um="torcedor">
+                  Torcedor<div><span class="unit-model-tag umt-green">+ vendido</span></div>
+                </button>
+                <button class="unit-model-btn" data-um="jogador">
+                  Jogador<div><span class="unit-model-tag umt-gray">premium</span></div>
+                </button>
+              </div>
+            </div>
             </div>
           </div>
 
           <!-- BUNDLE 3 UNIDADES -->
-          <div class="bundle" data-i="2">
+          <div class="bundle" data-i="2" data-qty="3" data-price="253.31">
             <div class="bundle-main">
               <div class="bundle-thumb-stack">
                 <div class="t3"><img src="CAMISASWOLRD11.webp" alt="" /></div>
@@ -524,15 +600,58 @@
                 <div class="bundle-was">R$ 569,70</div>
               </div>
             </div>
-            <div class="bundle-model-row" id="bm2">
-              <button class="bundle-model-btn active" data-bm="torcedor">
-                Modelo Torcedor
-                <div><span class="bundle-model-tag bmt-green">mais vendido</span></div>
-              </button>
-              <button class="bundle-model-btn" data-bm="jogador">
-                Modelo Jogador
-                <div><span class="bundle-model-tag bmt-gray">premium</span></div>
-              </button>
+            <div class="bundle-units" id="bu2">
+            <div class="unit-row">
+              <div class="unit-row-title">Camisa 1 — Camisa 1</div>
+              <div class="unit-sz-row">
+                <button class="unit-sz-btn active" data-sz="M">M</button>
+                <button class="unit-sz-btn" data-sz="P">P</button>
+                <button class="unit-sz-btn" data-sz="G">G</button>
+                <button class="unit-sz-btn" data-sz="GG">GG</button>
+              </div>
+              <div class="unit-model-row">
+                <button class="unit-model-btn active" data-um="torcedor">
+                  Torcedor<div><span class="unit-model-tag umt-green">+ vendido</span></div>
+                </button>
+                <button class="unit-model-btn" data-um="jogador">
+                  Jogador<div><span class="unit-model-tag umt-gray">premium</span></div>
+                </button>
+              </div>
+            </div>
+            <div class="unit-row">
+              <div class="unit-row-title">Camisa 2 — Camisa 2</div>
+              <div class="unit-sz-row">
+                <button class="unit-sz-btn active" data-sz="M">M</button>
+                <button class="unit-sz-btn" data-sz="P">P</button>
+                <button class="unit-sz-btn" data-sz="G">G</button>
+                <button class="unit-sz-btn" data-sz="GG">GG</button>
+              </div>
+              <div class="unit-model-row">
+                <button class="unit-model-btn active" data-um="torcedor">
+                  Torcedor<div><span class="unit-model-tag umt-green">+ vendido</span></div>
+                </button>
+                <button class="unit-model-btn" data-um="jogador">
+                  Jogador<div><span class="unit-model-tag umt-gray">premium</span></div>
+                </button>
+              </div>
+            </div>
+            <div class="unit-row">
+              <div class="unit-row-title">Camisa 3 — Camisa 3</div>
+              <div class="unit-sz-row">
+                <button class="unit-sz-btn active" data-sz="M">M</button>
+                <button class="unit-sz-btn" data-sz="P">P</button>
+                <button class="unit-sz-btn" data-sz="G">G</button>
+                <button class="unit-sz-btn" data-sz="GG">GG</button>
+              </div>
+              <div class="unit-model-row">
+                <button class="unit-model-btn active" data-um="torcedor">
+                  Torcedor<div><span class="unit-model-tag umt-green">+ vendido</span></div>
+                </button>
+                <button class="unit-model-btn" data-um="jogador">
+                  Jogador<div><span class="unit-model-tag umt-gray">premium</span></div>
+                </button>
+              </div>
+            </div>
             </div>
           </div>
 
@@ -545,7 +664,7 @@
       </div>
 
       <div>
-        <button class="btn-primary" onclick="alert('Redirecionando para o checkout...')">
+        <button class="btn-primary" id="openCartBtn">
           Garantir minha camisa agora
         </button>
       </div>
@@ -1033,37 +1152,24 @@
 var ai=0,atrack=document.getElementById('atrack');
 setInterval(function(){ai=(ai+1)%3;atrack.style.transform='translateX(-'+ai*100+'%)';},3000);
 
-// SIZE
-document.querySelectorAll('#sizes .size-btn').forEach(function(b){
-  b.addEventListener('click',function(){
-    document.querySelectorAll('#sizes .size-btn').forEach(function(x){x.classList.remove('active');});
-    b.classList.add('active');
-    document.getElementById('sz-lbl').textContent=b.dataset.s;
-  });
-});
-
-// BUNDLES — image cards with embedded model selector
+// BUNDLES — unit selectors (size + model per item)
 var bdata=[
-  {p:'R$ 129,90',w:'R$ 189,90',badge:'45% OFF',sticky:'R$ 129,90'},
-  {p:'R$ 207,84',w:'R$ 379,80',badge:'20% OFF',sticky:'R$ 207,84'},
-  {p:'R$ 253,31',w:'R$ 569,70',badge:'35% OFF',sticky:'R$ 253,31'}
+  {p:'R$ 129,90',w:'R$ 189,90',badge:'45% OFF',sticky:'R$ 129,90',price:129.90},
+  {p:'R$ 207,84',w:'R$ 379,80',badge:'20% OFF',sticky:'R$ 207,84',price:207.84},
+  {p:'R$ 253,31',w:'R$ 569,70',badge:'35% OFF',sticky:'R$ 253,31',price:253.31}
 ];
+
 document.querySelectorAll('#bundles .bundle').forEach(function(b){
   b.addEventListener('click',function(e){
-    // Don't re-trigger if clicking a model button inside
-    if(e.target.closest('.bundle-model-btn')) return;
-    // Deactivate all bundles
+    if(e.target.closest('.unit-sz-btn,.unit-model-btn')) return;
     document.querySelectorAll('#bundles .bundle').forEach(function(x){
       x.classList.remove('active');
-      // Hide all model rows
-      var mr=x.querySelector('.bundle-model-row');
-      if(mr) mr.classList.remove('show');
+      var u=x.querySelector('.bundle-units');
+      if(u) u.classList.remove('show');
     });
     b.classList.add('active');
-    // Show this bundle's model row
-    var myRow=b.querySelector('.bundle-model-row');
-    if(myRow) myRow.classList.add('show');
-    // Update price display
+    var units=b.querySelector('.bundle-units');
+    if(units) units.classList.add('show');
     var d=bdata[parseInt(b.dataset.i)];
     document.getElementById('disp-price').textContent=d.p;
     document.getElementById('disp-was').textContent=d.w;
@@ -1071,14 +1177,118 @@ document.querySelectorAll('#bundles .bundle').forEach(function(b){
     document.getElementById('sticky-price').textContent=d.sticky;
   });
 });
-// Model buttons inside bundles
-document.querySelectorAll('.bundle-model-btn').forEach(function(btn){
+
+// Size buttons inside unit rows
+document.querySelectorAll('.unit-sz-btn').forEach(function(btn){
   btn.addEventListener('click',function(e){
     e.stopPropagation();
-    var row=btn.closest('.bundle-model-row');
-    row.querySelectorAll('.bundle-model-btn').forEach(function(x){x.classList.remove('active');});
+    var row=btn.closest('.unit-sz-row');
+    row.querySelectorAll('.unit-sz-btn').forEach(function(x){x.classList.remove('active');});
     btn.classList.add('active');
   });
+});
+
+// Model buttons inside unit rows
+document.querySelectorAll('.unit-model-btn').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var row=btn.closest('.unit-model-row');
+    row.querySelectorAll('.unit-model-btn').forEach(function(x){x.classList.remove('active');});
+    btn.classList.add('active');
+  });
+});
+
+// ── CART DRAWER ──
+var cartItems=[];
+
+function getSelections(){
+  var bundle=document.querySelector('#bundles .bundle.active');
+  if(!bundle) return [];
+  var qty=parseInt(bundle.dataset.qty)||1;
+  var price=parseFloat(bundle.dataset.price)||129.90;
+  var perItem=(price/qty);
+  var unitRows=bundle.querySelectorAll('.unit-row');
+  var items=[];
+  unitRows.forEach(function(row,i){
+    var sz=row.querySelector('.unit-sz-btn.active');
+    var model=row.querySelector('.unit-model-btn.active');
+    items.push({
+      name:'Camisa do Brasil 2026',
+      size:sz?sz.dataset.sz:'M',
+      model:model?(model.dataset.um==='torcedor'?'Modelo Torcedor':'Modelo Jogador'):'Modelo Torcedor',
+      price:perItem,
+      img:'CAMISASWOLRD11.webp'
+    });
+  });
+  return items;
+}
+
+function formatBRL(n){return'R$ '+n.toFixed(2).replace('.',',');}
+
+function renderCart(){
+  var body=document.getElementById('cartItems');
+  var empty=document.getElementById('cartEmpty');
+  var foot=document.getElementById('cartFoot');
+  var totalEl=document.getElementById('cartTotal');
+  if(!cartItems.length){
+    empty.style.display='';body.innerHTML='';
+    foot.style.display='none';return;
+  }
+  empty.style.display='none';
+  foot.style.display='';
+  var html='';
+  var total=0;
+  cartItems.forEach(function(item,i){
+    total+=item.price;
+    html+='<div class="cart-item">'
+      +'<div class="cart-item-img"><img src="'+item.img+'" alt=""></div>'
+      +'<div class="cart-item-info">'
+      +'<div class="cart-item-name">'+item.name+'</div>'
+      +'<div class="cart-item-variant">Tamanho: '+item.size+' · '+item.model+'</div>'
+      +'<div class="cart-item-price">'+formatBRL(item.price)+'</div>'
+      +'<button class="cart-item-remove" data-idx="'+i+'">✕ Remover</button>'
+      +'</div></div>';
+  });
+  body.innerHTML=html;
+  totalEl.textContent=formatBRL(total);
+  body.querySelectorAll('.cart-item-remove').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      cartItems.splice(parseInt(btn.dataset.idx),1);
+      renderCart();
+    });
+  });
+}
+
+function openCart(){
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeCart(){
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.getElementById('openCartBtn').addEventListener('click',function(){
+  var selections=getSelections();
+  if(!selections.length){openCart();return;}
+  cartItems=selections;
+  renderCart();
+  openCart();
+});
+
+document.getElementById('cartClose').addEventListener('click',closeCart);
+document.getElementById('cartOverlay').addEventListener('click',closeCart);
+document.getElementById('cartContinue').addEventListener('click',closeCart);
+
+// sticky bar also opens cart
+document.querySelector('.btn-sticky') && document.querySelector('.btn-sticky').addEventListener('click',function(){
+  var selections=getSelections();
+  cartItems=selections.length?selections:cartItems;
+  renderCart();
+  openCart();
 });
 
 // STORIES mobile carousel — sync dots with scroll
@@ -1150,5 +1360,33 @@ document.querySelectorAll('.story-wrap').forEach(function(card){
   });
 })();
 </script>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <span class="cart-head-title">Meu Carrinho</span>
+    <button class="cart-close" id="cartClose">&#x2715;</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty" id="cartEmpty">
+      <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.83 14h8.34l1.57-8H5.21L4.27 2H1v2h2l3.6 9.59L5.25 16H19v-2H7.83z"/></svg>
+      <p>Seu carrinho está vazio</p>
+    </div>
+    <div id="cartItems"></div>
+  </div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div class="cart-subtotal">
+      <span class="cart-subtotal-label">Subtotal</span>
+      <span class="cart-subtotal-val" id="cartTotal">R$ 0,00</span>
+    </div>
+    <div class="cart-pix-note">💰 Pague no PIX e ganhe 5% de desconto adicional</div>
+    <button class="cart-checkout-btn" onclick="alert('Redirecionando para o checkout...')">
+      Finalizar compra
+    </button>
+    <button class="cart-continue" id="cartContinue">← Continuar comprando</button>
+  </div>
+</div>
+
 </body>
 </html>
